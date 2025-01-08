@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo/Helpers/boundary.dart';
 import 'package:todo/Logic/my_task_options.dart';
 import 'package:todo/Home%20Screen/Task%20Tile/sheet_content.dart';
 import 'package:todo/Modules/task.dart';
@@ -88,19 +89,17 @@ class _TaskTileState extends State<TaskTile>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              const Icon(Icons.text_format,),
-                              const SizedBox(width: 8),
-                              Text(
-                                widget.task.title,
-                                style: theme.textTheme.bodyLarge!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
+                          const Icon(Icons.text_format,),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              widget.task.title,
+                              style: theme.textTheme.bodyLarge!.copyWith(
+                                fontWeight: FontWeight.bold,
                               ),
-                            ],
+                            ),
                           ),
                           Text(
                             "(${widget.task.repeat == "None" ? "Once" : widget.task.repeat})",
@@ -121,12 +120,14 @@ class _TaskTileState extends State<TaskTile>
                       ),
                       const SizedBox(height: 16),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Icon(Icons.description,),
                           const SizedBox(width: 8),
-                          Text(
-                            widget.task.note,
-                            textAlign: TextAlign.center,
+                          Expanded(
+                            child: Text(
+                              widget.task.note,
+                            ),
                           ),
                         ],
                       ),

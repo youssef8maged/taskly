@@ -42,7 +42,7 @@ class NotificationDetails extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "\t\t${payloadList[0]}",
+            payloadList[0],
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(
@@ -67,7 +67,7 @@ class NotificationDetails extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "\t\t${payloadList[1]}",
+            payloadList[1],
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(
